@@ -1,4 +1,4 @@
-let username = document.getElementById('username');
+/*let username = document.getElementById('username');
 let password = document.getElementById('password');
 let form = document.querySelector('#form');
 
@@ -20,9 +20,10 @@ form.addEventListener("submit", e => {
     }
 
 
-    if(username.value !== '' && password.value !== ''){
+    if(username.value == 'admin' && password.value == 'admin'){
         window.location = "../index.php";
     }
+    else(window.location = "login.php");
 });
 
 function errorMessage(input){
@@ -34,4 +35,4 @@ function succesMessage(input){
     input.classList.add("succes");
 }
 
-
+*/

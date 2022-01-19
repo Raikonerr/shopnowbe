@@ -1,3 +1,18 @@
+<?php
+include 'connexion.php';
+
+
+
+
+
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +37,7 @@
 
       </div>
         <div class="sidebar">
-          <a href="./index.php">
+          <a href="./dashboard.php">
             <span class="material-icons-sharp">grid_view</span>
             <h3>Dashboard</h3>
           </a>
@@ -30,7 +45,7 @@
             <span class="material-icons-sharp">inventory</span>
             <h3>Products</h3>
           </a>
-          <a href="#">
+          <a href="index.php">
             <span class="material-icons-sharp">logout</span>
             <h3>Log out</h3>
           </a>
