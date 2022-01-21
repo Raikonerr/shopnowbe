@@ -1,32 +1,26 @@
-<?php
-$mysql_hostname = "localhost";
-$mysql_user = "root";
-$mysql_password = "";
-$mysql_database = "gestion";
-$con = mysqli_connect($mysql_hostname, $mysql_user, $mysql_password, $mysql_database);
+<?php 
+include 'connexion.php';
 
-if(isset($_POST['save'])){
-    $brand =$_POST['brand'];
+    
+       
+
+    if(isset($_POST['save'])){
+  
+        $id=$_GET['id'];
+        $brand =$_POST['brand'];
     $pn =$_POST['pn'];
     $reference =$_POST['reference'];
     $price =$_POST['price'];
     $quantity =$_POST['quantity'];
-
-    echo $brand;
-
-    if(mysqli_query($con,"INSERT INTO product (Brand, Product_name, Reference, Price, Quantity)
-      VALUES ('$brand','$pn','$reference','$price','$quantity')"))
-    { header("location: products.php");
-    }else{
-        $e=mysqli_error($con);}
-    
-    }
-     
-    
-
+       
+        if(mysqli_query($conn,"UPDATE `product` SET `Brand`='$brand',`Product_name`='$pn',`Reference`='$reference',`Price`='$price',`Quantity`='$quantity' WHERE `ID_P`='$id'")){
+          header("location: products.php");
+      }else{
+          echo "item not found";
+      }
+      }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +31,7 @@ if(isset($_POST['save'])){
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="login.css">
-    <title>Add product</title>
+    <title>update product</title>
 </head>
 <body>
     
@@ -45,14 +39,17 @@ if(isset($_POST['save'])){
     <div class="container">
         <div class="main">
                 <div class="content">
-                    <h2>Add a product</h2>
+                    <h2>Edit product</h2>
                     <form id="form" action="" method="POST">
+                        <input class=inp" name="id" placeholder="id" value="<?php echo $_GET['id']?>">
                         <input class="inp"  type="text" name="brand" id="username" placeholder="Brand">
                         <input class="inp" type="text" name="pn"  id="password" placeholder="Product name" >
                         <input class="inp"  type="text" name="reference" id="username" placeholder="Reference">
                         <input class="inp"  type="text" name="price" id="username" placeholder="Price">
                         <input class="inp"  type="text" name="quantity" id="username" placeholder="Quantity">
                         <input class="btn"  name="save" id="btn" type="submit" value="Submit">
+                        
+
                     </form>
                 </div>
                 <div class="form-img">

@@ -1,7 +1,39 @@
 <?php
 include 'connexion.php';
 
-?>
+$sql = "SELECT * FROM product";
+$listep = mysqli_query($conn,$sql);
+//print_r(mysqli_fetch_array($listep));
+$product = array();
+while($l=mysqli_fetch_array($listep)){
+  $product[]=$l;
+
+}
+//print_r($product);
+
+
+if(isset($_POST['del'])){
+  
+  $id= $_POST['id'];
+ 
+  if(mysqli_query($conn,"DELETE FROM product where ID_P ='$id'")){
+    header("location : products.php");
+}else{
+    echo "item not found";
+}
+}
+
+//edit
+
+
+
+
+
+
+
+?> 
+
+
 
  
  
@@ -19,6 +51,8 @@ include 'connexion.php';
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"rel="stylesheet">
+  <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
   <link rel="stylesheet" href="./products.css">
   <title>Dashboard</title>
 </head>
@@ -44,10 +78,14 @@ include 'connexion.php';
             <span class="material-icons-sharp">inventory</span>
             <h3>Products</h3>
           </a>
+          <a href="add.php" > <span class="material-icons-outlined" >
+           Add a product
+           </span>
           <a href="index.php">
             <span class="material-icons-sharp">logout</span>
             <h3>Log out</h3>
           </a>
+          
         </div>
     </aside>
 
@@ -56,6 +94,7 @@ include 'connexion.php';
 <!---------------------Products--------------------->
       <h1>Products</h1>
       <div class="products">
+        <form method="POST" >
         <table>
           <thead>
             <tr>
@@ -66,89 +105,33 @@ include 'connexion.php';
               <th>Quantity</th>
             </tr>
           </thead>
+          <?php foreach ($product as $p) : ?>
           <tbody>
+         
             <tr>
-              <td>FABAS LUCE</td>
-              <td>Lampe de bureau LED plate Wasp en aluminium</td>
-              <td>3502573</td>
-              <td>199,90 €</td>
-              <td>24</td>
+              <td><?php echo $p [1] ?></td>
+              <td><?php echo $p [2] ?></td>
+              <td><?php echo $p [3] ?></td>
+              <td><?php echo $p [4] ?></td>
+              <td><?php echo $p [5] ?></td>
+              <form method="POST" class ="delete">
+              <td class="hidden"><input value=<?php echo $p[0]?> name="id"></td>
+              <td> <button  name="del"> DELETE</button> <td>
+              <td> <a href="edit.php?id=<?php echo $p[0] ?>" name="edit" > EDIT</a> <td>
+          </form>
+         
             </tr>
+           
+           
+          
 
-            <tr>
-              <td>LINDBY</td>
-              <td>Lampe Banker Milenka, laiton poli</td>
-              <td>9620987</td>
-              <td>79,90 €</td>
-              <td>24</td>
-            </tr>
 
-            <tr>
-              <td>LINDBY</td>
-              <td>Lindby Livel panneau LED, 4 000 K, 40 cm x 40 cm</td>
-              <td>9956001</td>
-              <td>59,90 €</td>
-              <td>24</td>
-            </tr>
-
-            <tr>
-              <td>LINDBY</td>
-              <td>Lampe de bureau LED Eleni noire</td>
-              <td>9950191</td>
-              <td>89,90 €</td>
-              <td>24</td>
-            </tr>
-            
-            <tr>
-              <td>LINDBY</td>
-              <td>Lindby Livel panneau LED, 4 000 K, 80 cm x 30 cm</td>
-              <td>9956002</td>
-              <td>84,90 €</td>
-              <td>24</td>
-            </tr>
-
-            <tr>
-              <td>LUCANDE</td>
-              <td>Lampe de bureau LED Nicano alu avec variateur</td>
-              <td>9621659</td>
-              <td>132,90 €</td>
-              <td>24</td>
-            </tr>
-
-            <tr>
-              <td>ARCCHIO</td>
-              <td>Lampadaire LED de bureau Nora avec détecteur</td>
-              <td>9966006</td>
-              <td>349,90 €</td>
-              <td>24</td>
-            </tr>
-
-            <tr>
-              <td>ARCCHIO</td>
-              <td>Arian - spot encastrable blanc, 11,3 cm, 9 W</td>
-              <td>9978009</td>
-              <td>14,90 €</td>
-              <td>24</td>
-            </tr>
           </tbody>
+          <?php endforeach ; ?>
         </table>
+</form>
 
-        <div class="product">
-          <div>
-            <span type="button" class="material-icons-sharp">add</span>
-            <h3>Add Product</h3>
-          </div>
-          <div>
-            <span class="material-icons-sharp">edit</span>
-            <h3>Edit Product</h3>
-          </div>
-          <div>
-            <span class="material-icons-sharp">delete</span>
-            <h3>Delete Product</h3>
-          </div>
-      </div>
       
-    </div>
     </main>
 
     <div class="right">
@@ -176,40 +159,7 @@ include 'connexion.php';
         </div>
       </div>
       <!--------------End of top-------->
-      <div class="recent-updates">
-        <h2>Recent Updates</h2>
-        <div class="updates">
-          <div class="update">
-            <div class="profile-photo">
-              <img src="./images/blank-profile-picture-973460_1280.webp">
-            </div>
-            <div class="message">
-              <p><b>Lorem ipsum</b> received his order of Lorem ipsum.</p>
-              <small class="text-muted">2 Hours Ago</small>
-            </div>
-          </div>
-          <div class="update">
-            <div class="profile-photo">
-              <img src="./images/blank-profile-picture-973460_1280.webp">
-            </div>
-            <div class="message">
-              <p><b>Lorem ipsum</b> received his order of Lorem ipsum.</p>
-              <small class="text-muted">2 Hours Ago</small>
-            </div>
-          </div>
-          <div class="update">
-            <div class="profile-photo">
-              <img src="./images/blank-profile-picture-973460_1280.webp">
-            </div>
-            <div class="message">
-              <p><b>Lorem ipsum</b> received his order of Lorem ipsum.</p>
-              <small class="text-muted">2 Hours Ago</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+     
 
   <script src="./products.js"></script>
 </body>

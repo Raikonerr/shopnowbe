@@ -41,6 +41,9 @@
   list-style: none;
   box-sizing: border-box;
 }
+/* button{
+  user-select: all;
+} */
 
 html {
   font-size: 14px;
@@ -52,7 +55,6 @@ body {
   font-family: poppins, sans-serif;
   font-size: 0.88rem;
   background: var(--color-background);
-  user-select: none;
   overflow-x: hidden;
   color: var(--color-dark);
 }
@@ -105,7 +107,9 @@ small {
   border-radius: 50%;
   overflow: hidden;
 }
-
+.hidden{
+  display: none;
+}
 .text-muted {
   color: var(--color-info-dark);
 }
@@ -292,9 +296,9 @@ main .product:hover{
   gap: 2rem;
 }
 
-.right .top button {
-  display: none;
-}
+/* .right .top button {
+   display: none; 
+} */
 
 .right .theme-toggler {
   background: var(--color-light);
@@ -457,16 +461,16 @@ main .product:hover{
     display: none;
   }
 
-  .right .top button {
+  /* .right .top button {
     display: inline-block;
     background: transparent;
     cursor: pointer;
     color: var(--color-dark);
     position: absolute;
     left: 1rem;
-  }
+  } */
 
-  .right .top button span {
+  /* .right .top button span {
     font-size: 2rem;
-  }
+  } */
 }
