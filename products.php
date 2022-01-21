@@ -1,12 +1,11 @@
 <?php
 include 'connexion.php';
 
-
-
-
-
-
 ?>
+
+ 
+ 
+ 
 
 
 
@@ -136,7 +135,7 @@ include 'connexion.php';
 
         <div class="product">
           <div>
-            <span class="material-icons-sharp">add</span>
+            <span type="button" class="material-icons-sharp">add</span>
             <h3>Add Product</h3>
           </div>
           <div>

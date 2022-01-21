@@ -20,11 +20,11 @@ form.addEventListener("submit", e => {
     }
 
 
-    if(username.value == 'admin' && password.value == 'admin'){
-        window.location = "../index.php";
+    if(username.value !== 'admin' && password.value !== 'admin'){
+        alert("les donnes sont errones");
     }
-    else(window.location = "login.php");
-});
+   
+);
 
 function errorMessage(input){
     input.classList.remove("succes");
@@ -35,4 +35,3 @@ function succesMessage(input){
     input.classList.add("succes");
 }
 
-*/
