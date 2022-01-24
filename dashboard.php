@@ -1,6 +1,14 @@
 <?php
+
+
+
+
+session_start();
+if(!isset($_SESSION['username'])&&!isset($_SESSION['pass'])&&empty($_SESSION['username'])&&empty($_SESSION['pass'])){
+    header('location:index.php');
+  }
 include 'connexion.php';
-//session_start();
+
 ?>
 
 
@@ -37,7 +45,7 @@ include 'connexion.php';
             <span class="material-icons-sharp">inventory</span>
             <h3>Products</h3>
           </a>
-          <a href="index.php">
+          <a href="logout.php">
             <span class="material-icons-sharp">logout</span>
             <h3>Log out</h3>
           </a>

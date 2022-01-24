@@ -22,6 +22,10 @@ body{
      grid-template-columns: 1fr auto ;
      align-items: center;
  }
+ .inp{
+     display:none;
+ }
+ 
  .container{
      max-width:890px;
      margin: 0 auto;

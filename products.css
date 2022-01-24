@@ -225,6 +225,18 @@ main .products {
   margin-top: 2rem;
 }
 
+#delete{
+  font-size: 12px;
+  padding: 3px 5px;
+  /* border: 1px solid black; */
+  cursor: pointer;
+  border-radius: 5px;
+  color: var(--color-primary);
+  background-color: white;
+  font-family: poppins,sans-serif;
+  font-weight: 400;
+  
+}
 
 main .products table {
   background-color: var(--color-white);
@@ -296,9 +308,9 @@ main .product:hover{
   gap: 2rem;
 }
 
-/* .right .top button {
+ .right .top button {
    display: none; 
-} */
+} 
 
 .right .theme-toggler {
   background: var(--color-light);
@@ -461,16 +473,16 @@ main .product:hover{
     display: none;
   }
 
-  /* .right .top button {
+   .right .top button {
     display: inline-block;
     background: transparent;
     cursor: pointer;
     color: var(--color-dark);
     position: absolute;
     left: 1rem;
-  } */
+  } 
 
-  /* .right .top button span {
+   .right .top button span {
     font-size: 2rem;
-  } */
+  } 
 }

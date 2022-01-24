@@ -1,4 +1,9 @@
 <?php
+
+session_start();
+if(!isset($_SESSION['user'])&&!isset($_SESSION['pass'])&&empty($_SESSION['user'])&&empty($_SESSION['pass'])){
+    header('location:index.php');
+  }
 include 'connexion.php';
 
 $sql = "SELECT * FROM product";
@@ -78,10 +83,11 @@ if(isset($_POST['del'])){
             <span class="material-icons-sharp">inventory</span>
             <h3>Products</h3>
           </a>
-          <a href="add.php" > <span class="material-icons-outlined" >
-           Add a product
-           </span>
-          <a href="index.php">
+          <a href="add.php" > <span class="material-icons-sharp">
+              add
+              </span>
+           <h3>Add a product</h3>
+          <a href="logout.php">
             <span class="material-icons-sharp">logout</span>
             <h3>Log out</h3>
           </a>
@@ -116,7 +122,7 @@ if(isset($_POST['del'])){
               <td><?php echo $p [5] ?></td>
               <form method="POST" class ="delete">
               <td class="hidden"><input value=<?php echo $p[0]?> name="id"></td>
-              <td> <button  name="del"> DELETE</button> <td>
+              <td> <button id="delete" name="del"> DELETE</button> <td>
               <td> <a href="edit.php?id=<?php echo $p[0] ?>" name="edit" > EDIT</a> <td>
           </form>
          

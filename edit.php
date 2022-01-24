@@ -1,13 +1,14 @@
 <?php 
 include 'connexion.php';
-
-    
-       
+    $id=$_GET['id'];
+    $affsql="SELECT * FROM `product` WHERE `ID_P`='$id'";
+    $res=mysqli_query($conn,$affsql);
+   
 
     if(isset($_POST['save'])){
   
-        $id=$_GET['id'];
-        $brand =$_POST['brand'];
+    $id=$_GET['id'];
+     $brand =$_POST['brand'];
     $pn =$_POST['pn'];
     $reference =$_POST['reference'];
     $price =$_POST['price'];
@@ -41,19 +42,21 @@ include 'connexion.php';
                 <div class="content">
                     <h2>Edit product</h2>
                     <form id="form" action="" method="POST">
-                        <input class=inp" name="id" placeholder="id" value="<?php echo $_GET['id']?>">
-                        <input class="inp"  type="text" name="brand" id="username" placeholder="Brand">
-                        <input class="inp" type="text" name="pn"  id="password" placeholder="Product name" >
-                        <input class="inp"  type="text" name="reference" id="username" placeholder="Reference">
-                        <input class="inp"  type="text" name="price" id="username" placeholder="Price">
-                        <input class="inp"  type="text" name="quantity" id="username" placeholder="Quantity">
+                        <?php while( $affiche=mysqli_fetch_array($res)):; ?>
+
+                        <input class="inp" name="id" placeholder="id" value="<?php echo $_GET['id']?>">
+                        <input class="inp"  type="text" name="brand" id="username"  value="<?php echo $affiche[1] ?>">
+                        <input class="inp" type="text" name="pn"  id="password" placeholder="Product name" value="<?php echo $affiche[2] ?>">
+                        <input class="inp"  type="text" name="reference" id="username" placeholder="Reference"value=<?php echo $affiche[3] ?>>
+                        <input class="inp"  type="text" name="price" id="username" placeholder="Price" value=<?php echo $affiche[4] ?>>
+                        <input class="inp"  type="text" name="quantity" id="username" placeholder="Quantity" value=<?php echo $affiche[5] ?>>
                         <input class="btn"  name="save" id="btn" type="submit" value="Submit">
                         
-
+                        <?php endwhile; ?>
                     </form>
                 </div>
                 <div class="form-img">
-                    <img src="pic/product.png">
+                    <img src="pic/edit.png">
                 </div>
                 
 
