@@ -44,7 +44,7 @@ include 'connexion.php';
                     <form id="form" action="" method="POST">
                         <?php while( $affiche=mysqli_fetch_array($res)):; ?>
 
-                        <input class="inp" name="id" placeholder="id" value="<?php echo $_GET['id']?>">
+                        <input class="inp" name="id" placeholder="id" value="<?php echo $_GET['id']?>" disabled>
                         <input class="inp"  type="text" name="brand" id="username"  value="<?php echo $affiche[1] ?>">
                         <input class="inp" type="text" name="pn"  id="password" placeholder="Product name" value="<?php echo $affiche[2] ?>">
                         <input class="inp"  type="text" name="reference" id="username" placeholder="Reference"value=<?php echo $affiche[3] ?>>

@@ -74,6 +74,7 @@ a {
 img {
   display: block;
   width: 100%;
+  
 }
 
 h1 {
@@ -232,7 +233,7 @@ main .products {
   cursor: pointer;
   border-radius: 5px;
   color: var(--color-primary);
-  background-color: white;
+  background-color: var(--color-light-variant);
   font-family: poppins,sans-serif;
   font-weight: 400;
   
