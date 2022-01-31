@@ -12,18 +12,13 @@ if(isset($_POST['save'])){
     $price =$_POST['price'];
     $quantity =$_POST['quantity'];
 
-    echo $brand;
 
     if(mysqli_query($con,"INSERT INTO product (Brand, Product_name, Reference, Price, Quantity)
       VALUES ('$brand','$pn','$reference','$price','$quantity')"))
     { header("location: products.php");
     }else{
         $e=mysqli_error($con);}
-    
     }
-     
-    
-
 
 ?>
 
@@ -40,8 +35,9 @@ if(isset($_POST['save'])){
 <body>
     
     <div class="login-form">
-    <div class="container">
-        <div class="main">
+        <div class="container">
+            <div class="main">
+                
                 <div class="content">
                     <h2>Add a product</h2>
                     <form id="form" action="" method="POST">
@@ -51,17 +47,14 @@ if(isset($_POST['save'])){
                         <input class="inp"  type="text" name="price" id="username" placeholder="Price">
                         <input class="inp"  type="text" name="quantity" id="username" placeholder="Quantity">
                         <input class="btn"  name="save" id="btn" type="submit" value="Submit">
-                        
                     </form>
                 </div>
+                
                 <div class="form-img">
                     <img src="pic/product.png">
                 </div>
-                
-
+        
+            </div>
         </div>
     </div>
-    </div>
-    
-<script src="login.js"></script>
 </html>

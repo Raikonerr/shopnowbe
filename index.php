@@ -29,10 +29,6 @@ if(isset($_POST['login'])){
         header("location:dashboard.php");
     }
 
-
-
-
-
 ?>
 
 
@@ -70,6 +66,5 @@ if(isset($_POST['login'])){
         </div>
     </div>
     </div>
-    
-<script src="login.js"></script>
+
 </html>

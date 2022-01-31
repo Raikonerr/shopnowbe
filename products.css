@@ -64,7 +64,7 @@ body {
   width: 96%;
   margin: 0 auto;
   gap: 1.8rem;
-  grid-template-columns: 14rem auto 20rem;
+  grid-template-columns: 14rem auto 14rem;
 }
 
 a {
@@ -74,6 +74,7 @@ a {
 img {
   display: block;
   width: 100%;
+  
 }
 
 h1 {
@@ -232,7 +233,7 @@ main .products {
   cursor: pointer;
   border-radius: 5px;
   color: var(--color-primary);
-  background-color: white;
+  background-color: var(--color-light-variant);
   font-family: poppins,sans-serif;
   font-weight: 400;
   
@@ -344,38 +345,12 @@ main .product:hover{
   text-align: right;
 }
 
-.right .recent-updates {
-  margin-top: 1rem;
-}
-
-.right .recent-updates h2 {
-  margin-top: 0.8rem;
-}
-
-.right .recent-updates .updates {
-  background: var(--color-white);
-  padding: var(--card-padding);
-  border-radius: var(--card-border-radius);
-  box-shadow: var(--box-shadow);
-  transition: all 300ms ease;
-}
-
-.right .recent-updates .updates:hover {
-  box-shadow: none;
-}
-
-.right .recent-updates .updates .update {
-  display: grid;
-  grid-template-columns: 2.6rem auto;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
 /******************MEDIA QUERIES****************/
 
 @media screen and (max-width: 1200px) {
   .container {
     width: 94%;
-    grid-template-columns: 7rem auto 23rem;
+    grid-template-columns: 7rem auto 14rem;
   }
 
   aside .logo h2 {
@@ -391,7 +366,9 @@ main .product:hover{
     position: relative;
     margin-top: 1.8rem;
   }
+
 }
+
 
 @media screen and (max-width: 768px) {
   .container {
@@ -410,6 +387,7 @@ main .product:hover{
     display: none;
     animation: showMenu 400ms ease forwards;
   }
+
 
   @keyframes showMenu {
     to {
@@ -442,6 +420,21 @@ main .product:hover{
   main {
     margin-top: 8rem;
     padding: 0 1rem;
+  }
+
+  .products{
+    overflow-x: auto;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
   }
   
   .right {

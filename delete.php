@@ -1,4 +1,6 @@
-<?php require_once('connexion.php') ?>
+<?php
+    include 'connexion.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,11 +14,11 @@
     <div class="container">
         <div class="message">
         <?php 
-       if(isset($_GET['delete'])){
 
-                
-               echo $id;
-               $id=$_GET['delete'];
+            if(isset($_GET['delete'])){
+
+                echo $id;
+                $id=$_GET['delete'];
                
             }
             
@@ -25,26 +27,11 @@
             }else{
                 echo "item not found";
             }
-        echo $_GET['d'];
-             ?>
-            <a href="products.php">return</a>
+            
+        ?>
+            
         </div>
     </div>
     
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

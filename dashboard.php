@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 session_start();
 if(!isset($_SESSION['username'])&&!isset($_SESSION['pass'])&&empty($_SESSION['username'])&&empty($_SESSION['pass'])){
     header('location:index.php');
@@ -10,6 +7,9 @@ if(!isset($_SESSION['username'])&&!isset($_SESSION['pass'])&&empty($_SESSION['us
 include 'connexion.php';
 
 ?>
+
+
+
 
 
 
@@ -145,11 +145,18 @@ include 'connexion.php';
             <tr>
               <td>Lorem ipsum</td>
               <td>85631</td>
-              <td>Due</td>
-              <td class="warning">Pending</td>
+              <td>Refunded</td>
+              <td class="danger">Declined</td>
               <td class="primary">Details</td>
             </tr>
 
+            <tr>
+              <td>Lorem ipsum</td>
+              <td>85631</td>
+              <td>Paid</td>
+              <td class="success">Delivered</td>
+              <td class="primary">Details</td>
+            </tr>
             <tr>
               <td>Lorem ipsum</td>
               <td>85631</td>
@@ -161,26 +168,20 @@ include 'connexion.php';
             <tr>
               <td>Lorem ipsum</td>
               <td>85631</td>
-              <td>Due</td>
-              <td class="warning">Pending</td>
+              <td>Refunded</td>
+              <td class="danger">Declined</td>
               <td class="primary">Details</td>
             </tr>
 
             <tr>
               <td>Lorem ipsum</td>
               <td>85631</td>
-              <td>Due</td>
-              <td class="warning">Pending</td>
+              <td>Paid</td>
+              <td class="success">Delivered</td>
               <td class="primary">Details</td>
             </tr>
 
-            <tr>
-              <td>Lorem ipsum</td>
-              <td>85631</td>
-              <td>Due</td>
-              <td class="warning">Pending</td>
-              <td class="primary">Details</td>
-            </tr>
+            
           </tbody>
         </table>
         <a href="#">Show All</a>
