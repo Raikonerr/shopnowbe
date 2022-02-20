@@ -43,9 +43,9 @@ if(isset($_POST['save'])){
                     <form id="form" action="" method="POST">
                         <input class="inp"  type="text" name="brand" id="username" placeholder="Brand">
                         <input class="inp" type="text" name="pn"  id="password" placeholder="Product name" >
-                        <input class="inp"  type="text" name="reference" id="username" placeholder="Reference">
-                        <input class="inp"  type="text" name="price" id="username" placeholder="Price">
-                        <input class="inp"  type="text" name="quantity" id="username" placeholder="Quantity">
+                        <input class="inp"  type="number" name="reference" id="username" placeholder="Reference">
+                        <input class="inp"  type="number" name="price" id="username" placeholder="Price">
+                        <input class="inp"  type="number" name="quantity" id="username" placeholder="Quantity">
                         <input class="btn"  name="save" id="btn" type="submit" value="Submit">
                     </form>
                 </div>

@@ -18,14 +18,14 @@ while($l=mysqli_fetch_array($listep)){
 if(isset($_POST['del'])){
   
   $id= $_POST['id'];
- 
-  if(mysqli_query($conn,"DELETE FROM product where ID_P ='$id'")){
-    header("location : products.php");
-}else{
-    echo "item not found";
-}
-}
 
+ 
+  if(mysqli_query($conn,"DELETE FROM product where ID_P = '$id'")){
+  }else{
+      echo "item not found";
+  }
+
+}
 
 ?> 
 
