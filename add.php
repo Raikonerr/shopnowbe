@@ -29,6 +29,7 @@ if(isset($_POST['save'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/b60c15b16a.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="login.css">
     <title>Add product</title>
 </head>
@@ -47,6 +48,9 @@ if(isset($_POST['save'])){
                         <input class="inp"  type="number" name="price" id="username" placeholder="Price">
                         <input class="inp"  type="number" name="quantity" id="username" placeholder="Quantity">
                         <input class="btn"  name="save" id="btn" type="submit" value="Submit">
+                        <a href='http://localhost/shopnowbe/products.php' style="margin-left :50%; background:none; color:black;">
+                            Cancel 
+                        </a>
                     </form>
                 </div>
                 

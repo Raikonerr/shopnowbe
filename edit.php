@@ -20,8 +20,8 @@
             echo "item not found";
         }
     }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +52,9 @@
                         <input class="inp"  type="number" name="price" id="username" placeholder="Price" value=<?php echo $affiche[4] ?>>
                         <input class="inp"  type="number" name="quantity" id="username" placeholder="Quantity" value=<?php echo $affiche[5] ?>>
                         <input class="btn"  name="save" id="btn" type="submit" value="Submit">
-                        
+                        <a href='http://localhost/shopnowbe/products.php' style="margin-left :50%; background:none; color:black;">
+                            Cancel
+                        </a>
                         <?php endwhile; ?>
                     </form>
                 </div>
@@ -62,6 +64,5 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>

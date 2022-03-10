@@ -34,22 +34,22 @@ include 'connexion.php';
             <span class="material-icons-sharp">close</span>
           </div>
         </div>
-
       </div>
-        <div class="sidebar">
-          <a href="#"  class="active">
-            <span class="material-icons-sharp">grid_view</span>
-            <h3>Dashboard</h3>
-          </a>
-          <a href="./products.php">
-            <span class="material-icons-sharp">inventory</span>
-            <h3>Products</h3>
-          </a>
-          <a href="logout.php">
-            <span class="material-icons-sharp">logout</span>
-            <h3>Log out</h3>
-          </a>
-        </div>
+
+      <div class="sidebar">
+        <a href="#"  class="active">
+          <span class="material-icons-sharp">grid_view</span>
+          <h3>Dashboard</h3>
+        </a>
+        <a href="./products.php">
+          <span class="material-icons-sharp">inventory</span>
+          <h3>Products</h3>
+        </a>
+        <a href="logout.php">
+          <span class="material-icons-sharp">logout</span>
+          <h3>Log out</h3>
+        </a>
+      </div>
     </aside>
 
     <main>

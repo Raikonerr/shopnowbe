@@ -221,9 +221,12 @@ aside .sidebar .message-count {
 /* ----------MAIN--------------- */
 main {
   margin-top: 1.4rem;
+  width: 100vw;
+ 
 }
 main .products {
   margin-top: 2rem;
+  overflow-x:scroll;
 }
 
 #delete{
@@ -422,7 +425,7 @@ main .product:hover{
     padding: 0 1rem;
   }
 
-  .products{
+  main table{
     overflow-x: auto;
   }
 
@@ -430,6 +433,7 @@ main .product:hover{
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
+
   }
   
   th, td {
@@ -439,7 +443,6 @@ main .product:hover{
   
   .right {
     width: 94%;
-    margin: 0 auto 4rem;
   }
 
   .right .top {
@@ -450,7 +453,7 @@ main .product:hover{
     padding: 0 0.8rem;
     height: 4.6rem;
     background: var(--color-white);
-    width: 100%;
+    width: 100vw;
     margin: 0;
     z-index: 2;
     box-shadow: 0 1rem 1rem var(--color-light);
@@ -466,7 +469,7 @@ main .product:hover{
     display: none;
   }
 
-   .right .top button {
+  .right .top button {
     display: inline-block;
     background: transparent;
     cursor: pointer;
@@ -475,7 +478,13 @@ main .product:hover{
     left: 1rem;
   } 
 
-   .right .top button span {
+  .right .top button span {
     font-size: 2rem;
   } 
+}
+
+@media(max-width: 736px){
+  table{
+    overflow-x: scroll;
+  }
 }

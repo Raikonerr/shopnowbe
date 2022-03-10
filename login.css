@@ -56,7 +56,6 @@ body{
       box-shadow: 2px 9px 49px -17px rgba(0, 0, 0, 0.199);
       border-top-left-radius: 8px;
       border-bottom-left-radius: 8px;
-      
   }
   .form-img {
       flex-basis: 50%;
@@ -78,8 +77,7 @@ body{
       opacity: 0.6;
       text-align: center;
   }
-  .btn,
-  .inp{
+  .btn,.inp{
       border-radius:35px;
   }
 
@@ -95,7 +93,6 @@ body{
   .login-form .inp{
       outline: none;
       margin-bottom: 15px;
-      font-stretch:16px;
       color: #999;
       text-align: left;
       padding: 14px 20px;
@@ -116,6 +113,7 @@ body{
       background:transparent;
       border:1px solid #0568C1;
   }
+  
   .login-form .btn{
       font-size: 18px;
       color: #fff;
@@ -123,12 +121,22 @@ body{
       background:#3FBDF1;
       border: none;
       padding: 14px 15px;
+      margin: 1em;
       font-weight: 500;
       transition: 0.3s ease;
   }
+/* 
+  a{ 
+    
+  } */
+
+ 
   .login-form .btn:hover{
       background:rgb(247, 230, 2) ;
       color: #333;
+  }
+  .login-form .cancel_btn:hover{
+      text-decoration: underline;
   }
   p.acount, p.account a{
       text-align: center;
@@ -154,18 +162,16 @@ body{
 
       }
 
-      .form-img{
-          border-radius:0;
-          border-bottom-left-radius: 8px;
-          border-bottom-right-radius: 8px;
-          order: 2;
+      .form-img {
+          display: none;
       }
       .content{
           order:1;
           border-radius:0 ;
           border-top-left-radius: 8px;
           border-top-right-radius: 8px;
-
+          flex-basis:100%;
       }
-
-  }
+     
+    
+    }
