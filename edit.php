@@ -46,13 +46,13 @@
                         <?php while( $affiche=mysqli_fetch_array($res)):; ?>
 
                         <input class="inp" name="id" placeholder="id" value="<?php echo $_GET['id']?>">
-                        <input class="inp"  type="text" name="brand" id="username" placeholder="Product brand"  value="<?php echo $affiche[1] ?>">
-                        <input class="inp" type="text" name="pn"  id="password" placeholder="Product name" value="<?php echo $affiche[2] ?>">
-                        <input class="inp"  type="number" name="reference" id="username" placeholder="Reference" value=<?php echo $affiche[3] ?>>
-                        <input class="inp"  type="number" name="price" id="username" placeholder="Price" value=<?php echo $affiche[4] ?>>
-                        <input class="inp"  type="number" name="quantity" id="username" placeholder="Quantity" value=<?php echo $affiche[5] ?>>
+                        <input class="inp"  type="text" name="brand" id="username" placeholder="Product brand"  value="<?php echo $affiche[1] ?>" required>
+                        <input class="inp" type="text" name="pn"  id="password" placeholder="Product name" value="<?php echo $affiche[2] ?>" required>
+                        <input class="inp"  type="number" name="reference" id="username" placeholder="Reference" value=<?php echo $affiche[3] ?> required>
+                        <input class="inp"  type="number" name="price" id="username" placeholder="Price" value=<?php echo $affiche[4] ?> required>
+                        <input class="inp"  type="number" name="quantity" id="username" placeholder="Quantity" value=<?php echo $affiche[5] ?> required>
                         <input class="btn"  name="save" id="btn" type="submit" value="Submit">
-                        <a href='http://localhost/shopnowbe/products.php' style="margin-left :50%; background:none; color:black;">
+                        <a href='http://localhost/shopnowbe/products.php' style="background:none; color:black;">
                             Cancel
                         </a>
                         <?php endwhile; ?>

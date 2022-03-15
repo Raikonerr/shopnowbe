@@ -21,6 +21,7 @@ if(isset($_POST['del'])){
 
  
   if(mysqli_query($conn,"DELETE FROM product where ID_P = '$id'")){
+    header('location: products.php');
   }else{
       echo "item not found";
   }
@@ -73,7 +74,7 @@ if(isset($_POST['del'])){
           <span class="material-icons-sharp">logout</span>
           <h3>Log out</h3>
         </a>
-      </div>
+        </div>
     </aside>
 
     <main>
@@ -104,14 +105,15 @@ if(isset($_POST['del'])){
                 <form method="POST" class ="delete">
                 <td class="hidden"><input value=<?php echo $p[0]?> name="id"></td>
                 <td> <button id="delete" name="del"> DELETE</button> <td>
+                </form> 
                 <td> <a href="edit.php?id=<?php echo $p[0] ?>" name="edit" > EDIT</a> <td>
               </tr>
             
             </tbody>
             <?php endforeach; ?>
           </table>
-        </form>
-      
+
+          </form>
     </main>
 
     <div class="right">

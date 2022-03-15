@@ -41,14 +41,14 @@ if(isset($_POST['save'])){
                 
                 <div class="content">
                     <h2>Add a product</h2>
-                    <form id="form" action="" method="POST">
-                        <input class="inp"  type="text" name="brand" id="username" placeholder="Brand">
-                        <input class="inp" type="text" name="pn"  id="password" placeholder="Product name" >
-                        <input class="inp"  type="number" name="reference" id="username" placeholder="Reference">
-                        <input class="inp"  type="number" name="price" id="username" placeholder="Price">
-                        <input class="inp"  type="number" name="quantity" id="username" placeholder="Quantity">
+                    <form id="form" action="" method="POST" style='text-align:center;'>
+                        <input class="inp"  type="text" name="brand" id="username" placeholder="Brand" required>
+                        <input class="inp" type="text" name="pn"  id="password" placeholder="Product name" required>
+                        <input class="inp"  type="number" name="reference" id="username" placeholder="Reference" required>
+                        <input class="inp"  type="number" name="price" id="username" placeholder="Price" required> 
+                        <input class="inp"  type="number" name="quantity" id="username" placeholder="Quantity" required>
                         <input class="btn"  name="save" id="btn" type="submit" value="Submit">
-                        <a href='http://localhost/shopnowbe/products.php' style="margin-left :50%; background:none; color:black;">
+                        <a href='http://localhost/shopnowbe/products.php' style="background:none; color:black;">
                             Cancel 
                         </a>
                     </form>

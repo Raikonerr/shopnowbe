@@ -50,18 +50,17 @@ html {
 }
 
 body {
-  width: 100vw;
+  width: 98vw;
   height: 100vh;
   font-family: poppins, sans-serif;
   font-size: 0.88rem;
   background: var(--color-background);
-  overflow-x: hidden;
   color: var(--color-dark);
 }
 
 .container {
   display: grid;
-  width: 96%;
+  width: 100%;
   margin: 0 auto;
   gap: 1.8rem;
   grid-template-columns: 14rem auto 14rem;
@@ -221,12 +220,11 @@ aside .sidebar .message-count {
 /* ----------MAIN--------------- */
 main {
   margin-top: 1.4rem;
-  width: 100vw;
+  width: 100%;
  
 }
 main .products {
   margin-top: 2rem;
-  overflow-x:scroll;
 }
 
 #delete{
@@ -250,6 +248,12 @@ main .products table {
   text-align: center;
   box-shadow: var(--box-shadow);
   transition: all 300ms ease;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+main .products table::-webkit-scrollbar-button {
+  width: 0px;
 }
 
 main .products table:hover {
@@ -372,8 +376,23 @@ main .product:hover{
 
 }
 
+@media screen and (max-width:1000px) {
+  main .products {
+    width: 130%;
+  }
+}
 
 @media screen and (max-width: 768px) {
+  main {
+    overflow-x:hidden;
+  }
+  main .products {
+    width: 100%;
+    overflow-x: scroll;
+  }
+  main .products form table {
+    min-width: 700px;
+  }
   .container {
     width: 100%;
     grid-template-columns: 1fr;
@@ -425,9 +444,7 @@ main .product:hover{
     padding: 0 1rem;
   }
 
-  main table{
-    overflow-x: auto;
-  }
+
 
   table {
     border-collapse: collapse;
@@ -483,8 +500,4 @@ main .product:hover{
   } 
 }
 
-@media(max-width: 736px){
-  table{
-    overflow-x: scroll;
-  }
-}
+
